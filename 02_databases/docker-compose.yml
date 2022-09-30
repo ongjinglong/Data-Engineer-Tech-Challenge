@@ -1,0 +1,9 @@
+version: '3.9'
+services:
+    salespostgres:
+        build: .
+        image: sales-postgres-db
+        restart: always
+        container_name: sales-postgres-db-container
+        ports: 
+        - "5432:5432"

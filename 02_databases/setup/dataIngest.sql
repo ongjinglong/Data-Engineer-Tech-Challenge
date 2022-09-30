@@ -52,16 +52,16 @@ INSERT INTO car (carManufacturer, carModelName, carSerialNumber, carWeight, carP
 INSERT INTO car (carManufacturer, carModelName, carSerialNumber, carWeight, carPrice) VALUES ('Mazda', 'RX-7', 'SCFAD01A95G840939', 1574, 39103.55);
 
 INSERT INTO sale (saleDate, customerID, salesPersonID, carID) VALUES ('2022-09-14', 11, 9, 25);
-INSERT INTO sale (saleDate, customerID, salesPersonID, carID) VALUES ('2021-12-29', 2, 9, 3);
+INSERT INTO sale (saleDate, customerID, salesPersonID, carID) VALUES ('2022-09-11', 2, 9, 3);
 INSERT INTO sale (saleDate, customerID, salesPersonID, carID) VALUES ('2022-08-11', 11, 2, 25);
 INSERT INTO sale (saleDate, customerID, salesPersonID, carID) VALUES ('2022-01-07', 9, 5, 7);
 INSERT INTO sale (saleDate, customerID, salesPersonID, carID) VALUES ('2022-08-23', 2, 8, 13);
-INSERT INTO sale (saleDate, customerID, salesPersonID, carID) VALUES ('2021-12-03', 15, 8, 13);
-INSERT INTO sale (saleDate, customerID, salesPersonID, carID) VALUES ('2021-11-09', 4, 9, 9);
-INSERT INTO sale (saleDate, customerID, salesPersonID, carID) VALUES ('2021-12-17', 9, 3, 17);
-INSERT INTO sale (saleDate, customerID, salesPersonID, carID) VALUES ('2021-12-16', 10, 9, 16);
+INSERT INTO sale (saleDate, customerID, salesPersonID, carID) VALUES ('2022-09-03', 15, 8, 13);
+INSERT INTO sale (saleDate, customerID, salesPersonID, carID) VALUES ('2022-09-09', 4, 9, 9);
+INSERT INTO sale (saleDate, customerID, salesPersonID, carID) VALUES ('2022-09-17', 9, 3, 17);
+INSERT INTO sale (saleDate, customerID, salesPersonID, carID) VALUES ('2022-09-16', 10, 9, 16);
 INSERT INTO sale (saleDate, customerID, salesPersonID, carID) VALUES ('2022-06-06', 7, 7, 11);
-INSERT INTO sale (saleDate, customerID, salesPersonID, carID) VALUES ('2021-10-04', 10, 5, 12);
+INSERT INTO sale (saleDate, customerID, salesPersonID, carID) VALUES ('2022-09-04', 10, 5, 12);
 INSERT INTO sale (saleDate, customerID, salesPersonID, carID) VALUES ('2022-05-05', 12, 1, 15);
 INSERT INTO sale (saleDate, customerID, salesPersonID, carID) VALUES ('2022-01-24', 14, 10, 23);
 INSERT INTO sale (saleDate, customerID, salesPersonID, carID) VALUES ('2022-08-07', 6, 2, 14);

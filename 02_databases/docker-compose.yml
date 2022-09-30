@@ -1,16 +1,9 @@
 version: '3.9'
 services:
     salespostgres:
-        build: ./setup/.
+        build: .
         image: sales-postgres-db
         restart: always
         container_name: sales-postgres-db-container
         ports: 
         - "5432:5432"
-        environment:
-          - POSTGRES_USER=postgres
-          - POSTGRES_PASSWORD=password
-          - POSTGRES_DB=carSales
-        volumes: 
-        - ./setup/createSchema.sql:/docker-entrypoint-initdb.d/createSchema.sql
-        - ./setup/dataIngest.sql:/docker-entrypoint-initdb.d/dataIngest.sql

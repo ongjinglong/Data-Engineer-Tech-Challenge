@@ -1,0 +1,65 @@
+[2022-10-01 01:54:45,874] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: daily_data_processing_pipeline.dataset1.extract 2022-10-01T01:54:44.390846+00:00 [queued]>
+[2022-10-01 01:54:45,888] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: daily_data_processing_pipeline.dataset1.extract 2022-10-01T01:54:44.390846+00:00 [queued]>
+[2022-10-01 01:54:45,889] {taskinstance.py:1094} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-01 01:54:45,890] {taskinstance.py:1095} INFO - Starting attempt 1 of 1
+[2022-10-01 01:54:45,890] {taskinstance.py:1096} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-01 01:54:45,898] {taskinstance.py:1114} INFO - Executing <Task(_PythonDecoratedOperator): dataset1.extract> on 2022-10-01T01:54:44.390846+00:00
+[2022-10-01 01:54:45,903] {standard_task_runner.py:52} INFO - Started process 4022 to run task
+[2022-10-01 01:54:45,906] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'daily_data_processing_pipeline', 'dataset1.extract', '2022-10-01T01:54:44.390846+00:00', '--job-id', '18', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/dag_schedule.py', '--cfg-path', '/tmp/tmp9yfpp9ci', '--error-file', '/tmp/tmp4iml6pb2']
+[2022-10-01 01:54:45,907] {standard_task_runner.py:77} INFO - Job 18: Subtask dataset1.extract
+[2022-10-01 01:54:45,943] {logging_mixin.py:109} INFO - Running <TaskInstance: daily_data_processing_pipeline.dataset1.extract 2022-10-01T01:54:44.390846+00:00 [running]> on host f7d8021d0ce4
+[2022-10-01 01:54:45,990] {taskinstance.py:1253} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=daily_data_processing_pipeline
+AIRFLOW_CTX_TASK_ID=dataset1.extract
+AIRFLOW_CTX_EXECUTION_DATE=2022-10-01T01:54:44.390846+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-10-01T01:54:44.390846+00:00
+[2022-10-01 01:54:45,992] {dag_schedule.py:41} INFO - Input File Path
+[2022-10-01 01:54:45,993] {dag_schedule.py:42} INFO - /opt/***/dags/input/dataset1.csv
+[2022-10-01 01:54:46,025] {python.py:151} INFO - Done. Returned value was:                 name       price
+0      William Dixon  109.037280
+1       Kristen Horn  262.524652
+2     Kimberly Chang  187.007258
+3          Mary Ball  283.174648
+4     Benjamin Craig  143.871582
+...              ...         ...
+4995  Shirley Nguyen    9.011665
+4996     Jesse Brown  247.328232
+4997   Valerie Owens  238.103714
+4998    Alicia Sharp  243.622929
+4999   Sherry Jensen   13.839516
+
+[5000 rows x 2 columns]
+[2022-10-01 01:54:46,041] {xcom.py:229} ERROR - Could not serialize the XCom value into JSON. If you are using pickle instead of JSON for XCom, then you need to enable pickle support for XCom in your *** config.
+[2022-10-01 01:54:46,042] {taskinstance.py:1462} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/models/taskinstance.py", line 1164, in _run_raw_task
+    self._prepare_and_execute_task_with_callbacks(context, task)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/models/taskinstance.py", line 1282, in _prepare_and_execute_task_with_callbacks
+    result = self._execute_task(context, task_copy)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/models/taskinstance.py", line 1315, in _execute_task
+    self.xcom_push(key=XCOM_RETURN_KEY, value=result)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/utils/session.py", line 70, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/models/taskinstance.py", line 1904, in xcom_push
+    session=session,
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/utils/session.py", line 67, in wrapper
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/models/xcom.py", line 79, in set
+    value = XCom.serialize_value(value)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/models/xcom.py", line 226, in serialize_value
+    return json.dumps(value).encode('UTF-8')
+  File "/usr/local/lib/python3.6/json/__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+  File "/usr/local/lib/python3.6/json/encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/usr/local/lib/python3.6/json/encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "/usr/local/lib/python3.6/json/encoder.py", line 180, in default
+    o.__class__.__name__)
+TypeError: Object of type 'DataFrame' is not JSON serializable
+[2022-10-01 01:54:46,044] {taskinstance.py:1512} INFO - Marking task as FAILED. dag_id=daily_data_processing_pipeline, task_id=dataset1.extract, execution_date=20221001T015444, start_date=20221001T015445, end_date=20221001T015446
+[2022-10-01 01:54:46,078] {local_task_job.py:151} INFO - Task exited with return code 1
+[2022-10-01 01:54:46,111] {local_task_job.py:261} INFO - 0 downstream tasks scheduled from follow-on schedule check

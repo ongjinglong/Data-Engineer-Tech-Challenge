@@ -1,0 +1,14 @@
+BEGIN;
+
+CREATE TABLE IF NOT EXISTS covidCases (
+    Country VARCHAR(100) NOT NULL,
+    Lat NUMERIC NOT NULL,
+    Lon NUMERIC NOT NULL,
+    Confirmed BIGINT NOT NULL,
+    Deaths BIGINT NOT NULL,
+    Recovered BIGINT NOT NULL,
+    Active BIGINT NOT NULL,
+    Date TIMESTAMP
+);
+
+END;

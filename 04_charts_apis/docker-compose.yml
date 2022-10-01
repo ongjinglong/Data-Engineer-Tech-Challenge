@@ -1,0 +1,41 @@
+version: '3'
+networks:
+  monitoring:
+    driver: bridge
+volumes:
+  postgres_data: {}
+  grafana_data: {}
+services:
+  postgres:
+    image: postgres:latest
+    container_name: postgres-container
+    restart: always
+    ports:
+      - "3010:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - /setup/init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - monitoring
+    expose:
+    - 3010
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana-container
+    restart: always
+    ports:
+      - "3008:3000"
+    environment:
+      - GF_AUTH_DISABLE_LOGIN_FORM=true
+      - GF_AUTH_ANONYMOUS_ENABLED=true
+      - GF_AUTH_ANONYMOUS_ORG_ROLE=Admin
+    volumes:
+      - grafana_data:/var/lib/grafana:rw
+    networks:
+      - monitoring
+    expose:
+    - 3008

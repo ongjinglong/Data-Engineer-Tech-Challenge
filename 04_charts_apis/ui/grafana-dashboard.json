@@ -1,0 +1,532 @@
+{
+    "annotations": {
+      "list": [
+        {
+          "builtIn": 1,
+          "datasource": {
+            "type": "grafana",
+            "uid": "-- Grafana --"
+          },
+          "enable": true,
+          "hide": true,
+          "iconColor": "rgba(0, 211, 255, 1)",
+          "name": "Annotations & Alerts",
+          "target": {
+            "limit": 100,
+            "matchAny": false,
+            "tags": [],
+            "type": "dashboard"
+          },
+          "type": "dashboard"
+        }
+      ]
+    },
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "graphTooltip": 0,
+    "id": 1,
+    "links": [],
+    "liveNow": false,
+    "panels": [
+      {
+        "datasource": {
+          "type": "postgres",
+          "uid": "TCH8wFVVz"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "drawStyle": "line",
+              "fillOpacity": 0,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "auto",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 9,
+          "w": 12,
+          "x": 0,
+          "y": 0
+        },
+        "id": 2,
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+          },
+          "tooltip": {
+            "mode": "single",
+            "sort": "none"
+          }
+        },
+        "targets": [
+          {
+            "datasource": {
+              "type": "postgres",
+              "uid": "TCH8wFVVz"
+            },
+            "format": "time_series",
+            "group": [],
+            "metricColumn": "none",
+            "rawQuery": true,
+            "rawSql": "SELECT\n  date AS \"time\",\n  active as \"Active Cases\"\nFROM covidcases\nWHERE\n  $__timeFilter(date)",
+            "refId": "A",
+            "select": [
+              [
+                {
+                  "params": [
+                    "confirmed"
+                  ],
+                  "type": "column"
+                }
+              ],
+              [
+                {
+                  "params": [
+                    "confirmed"
+                  ],
+                  "type": "column"
+                }
+              ]
+            ],
+            "table": "covidcases",
+            "timeColumn": "date",
+            "timeColumnType": "timestamp",
+            "where": [
+              {
+                "name": "$__timeFilter",
+                "params": [],
+                "type": "macro"
+              }
+            ]
+          }
+        ],
+        "title": "Active Cases over Time",
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "type": "postgres",
+          "uid": "TCH8wFVVz"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "drawStyle": "line",
+              "fillOpacity": 0,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "auto",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 9,
+          "w": 12,
+          "x": 12,
+          "y": 0
+        },
+        "id": 3,
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+          },
+          "tooltip": {
+            "mode": "single",
+            "sort": "none"
+          }
+        },
+        "targets": [
+          {
+            "datasource": {
+              "type": "postgres",
+              "uid": "TCH8wFVVz"
+            },
+            "format": "time_series",
+            "group": [],
+            "metricColumn": "none",
+            "rawQuery": true,
+            "rawSql": "SELECT\n  date AS \"time\",\n  confirmed as \"Confirmed Cases\"\nFROM covidcases\nWHERE\n  $__timeFilter(date)",
+            "refId": "A",
+            "select": [
+              [
+                {
+                  "params": [
+                    "confirmed"
+                  ],
+                  "type": "column"
+                }
+              ],
+              [
+                {
+                  "params": [
+                    "confirmed"
+                  ],
+                  "type": "column"
+                }
+              ]
+            ],
+            "table": "covidcases",
+            "timeColumn": "date",
+            "timeColumnType": "timestamp",
+            "where": [
+              {
+                "name": "$__timeFilter",
+                "params": [],
+                "type": "macro"
+              }
+            ]
+          }
+        ],
+        "title": "Confirmed Cases over Time",
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "type": "postgres",
+          "uid": "TCH8wFVVz"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "drawStyle": "line",
+              "fillOpacity": 0,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "auto",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 9,
+          "w": 12,
+          "x": 0,
+          "y": 9
+        },
+        "id": 4,
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+          },
+          "tooltip": {
+            "mode": "single",
+            "sort": "none"
+          }
+        },
+        "targets": [
+          {
+            "datasource": {
+              "type": "postgres",
+              "uid": "TCH8wFVVz"
+            },
+            "format": "time_series",
+            "group": [],
+            "metricColumn": "none",
+            "rawQuery": true,
+            "rawSql": "SELECT\n  date AS \"time\",\n  recovered as \"Recovered Cases\"\nFROM covidcases\nWHERE\n  $__timeFilter(date)",
+            "refId": "A",
+            "select": [
+              [
+                {
+                  "params": [
+                    "confirmed"
+                  ],
+                  "type": "column"
+                }
+              ],
+              [
+                {
+                  "params": [
+                    "confirmed"
+                  ],
+                  "type": "column"
+                }
+              ]
+            ],
+            "table": "covidcases",
+            "timeColumn": "date",
+            "timeColumnType": "timestamp",
+            "where": [
+              {
+                "name": "$__timeFilter",
+                "params": [],
+                "type": "macro"
+              }
+            ]
+          }
+        ],
+        "title": "Recovered Cases over Time",
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "type": "postgres",
+          "uid": "TCH8wFVVz"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "drawStyle": "line",
+              "fillOpacity": 0,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "auto",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 9,
+          "w": 12,
+          "x": 12,
+          "y": 9
+        },
+        "id": 5,
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+          },
+          "tooltip": {
+            "mode": "single",
+            "sort": "none"
+          }
+        },
+        "targets": [
+          {
+            "datasource": {
+              "type": "postgres",
+              "uid": "TCH8wFVVz"
+            },
+            "format": "time_series",
+            "group": [],
+            "metricColumn": "none",
+            "rawQuery": true,
+            "rawSql": "SELECT\n  date AS \"time\",\n  deaths as \"Death Cases\"\nFROM covidcases\nWHERE\n  $__timeFilter(date)",
+            "refId": "A",
+            "select": [
+              [
+                {
+                  "params": [
+                    "confirmed"
+                  ],
+                  "type": "column"
+                }
+              ],
+              [
+                {
+                  "params": [
+                    "confirmed"
+                  ],
+                  "type": "column"
+                }
+              ]
+            ],
+            "table": "covidcases",
+            "timeColumn": "date",
+            "timeColumnType": "timestamp",
+            "where": [
+              {
+                "name": "$__timeFilter",
+                "params": [],
+                "type": "macro"
+              }
+            ]
+          }
+        ],
+        "title": "Death Cases over Time",
+        "type": "timeseries"
+      }
+    ],
+    "schemaVersion": 37,
+    "style": "dark",
+    "tags": [],
+    "templating": {
+      "list": []
+    },
+    "time": {
+      "from": "now-1y/y",
+      "to": "now"
+    },
+    "timepicker": {},
+    "timezone": "",
+    "title": "Covid Cases over Time",
+    "uid": "QiKCXK4Vz",
+    "version": 1,
+    "weekStart": ""
+  }

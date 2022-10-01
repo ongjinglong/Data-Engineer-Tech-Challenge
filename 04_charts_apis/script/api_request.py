@@ -8,7 +8,7 @@ headers = {'Content-Type': 'application/json'}
 def get_raw_c19_data(api_get_start_date=None):
     api_url = 'https://api.covid19api.com/total/country/singapore'
     if api_get_start_date:
-        api_url += f'?from={api_get_start_date.strftime("%Y-%m%dT%H:%M:%SZ")}'
+        api_url += f'?from={api_get_start_date.strftime("%Y-%m-%dT%H:%M:%SZ")}'
     print(api_url)
 
     api_response = requests.get(api_url, headers=headers)

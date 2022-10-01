@@ -1,0 +1,15 @@
+artifact_uri: file:///c:/Users/ongji/Documents/GitHub/Data-Engineer-Tech-Challenge/05_machine_learning/notebooks/mlruns/c75b07ffcfd54b58800d9bb5d2c665a8/artifacts
+end_time: 1664622663747
+entry_point_name: ''
+experiment_id: '1'
+lifecycle_stage: active
+name: ''
+run_id: c75b07ffcfd54b58800d9bb5d2c665a8
+run_uuid: c75b07ffcfd54b58800d9bb5d2c665a8
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1664622660627
+status: 3
+tags: []
+user_id: ongji

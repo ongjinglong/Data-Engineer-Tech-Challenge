@@ -1,0 +1,28 @@
+[2022-10-01 00:17:40,314] {processor.py:162} INFO - Started process (PID=7515) to work on /opt/airflow/dags/dag_schedule.py
+[2022-10-01 00:17:40,317] {processor.py:613} INFO - Processing file /opt/airflow/dags/dag_schedule.py for tasks to queue
+[2022-10-01 00:17:40,319] {logging_mixin.py:109} INFO - [2022-10-01 00:17:40,319] {dagbag.py:496} INFO - Filling up the DagBag from /opt/airflow/dags/dag_schedule.py
+[2022-10-01 00:17:40,417] {logging_mixin.py:109} INFO - [2022-10-01 00:17:40,409] {dagbag.py:329} ERROR - Failed to import: /opt/airflow/dags/dag_schedule.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/models/dagbag.py", line 326, in _load_modules_from_file
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/dag_schedule.py", line 28, in <module>
+    @task.external_python(task_id="start_task", python=os.fspath(sys.executable))
+AttributeError: '_TaskDecorator' object has no attribute 'external_python'
+[2022-10-01 00:17:40,427] {processor.py:625} WARNING - No viable dags retrieved from /opt/airflow/dags/dag_schedule.py
+[2022-10-01 00:17:40,452] {processor.py:170} INFO - Processing /opt/airflow/dags/dag_schedule.py took 0.141 seconds
+[2022-10-01 00:18:11,037] {processor.py:162} INFO - Started process (PID=7577) to work on /opt/airflow/dags/dag_schedule.py
+[2022-10-01 00:18:11,039] {processor.py:613} INFO - Processing file /opt/airflow/dags/dag_schedule.py for tasks to queue
+[2022-10-01 00:18:11,041] {logging_mixin.py:109} INFO - [2022-10-01 00:18:11,041] {dagbag.py:496} INFO - Filling up the DagBag from /opt/airflow/dags/dag_schedule.py
+[2022-10-01 00:18:11,116] {logging_mixin.py:109} INFO - [2022-10-01 00:18:11,105] {dagbag.py:329} ERROR - Failed to import: /opt/airflow/dags/dag_schedule.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/models/dagbag.py", line 326, in _load_modules_from_file
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/dag_schedule.py", line 28, in <module>
+    @task.external_python(task_id="start_task", python=os.fspath(sys.executable))
+AttributeError: '_TaskDecorator' object has no attribute 'external_python'
+[2022-10-01 00:18:11,133] {processor.py:625} WARNING - No viable dags retrieved from /opt/airflow/dags/dag_schedule.py
+[2022-10-01 00:18:11,156] {processor.py:170} INFO - Processing /opt/airflow/dags/dag_schedule.py took 0.124 seconds

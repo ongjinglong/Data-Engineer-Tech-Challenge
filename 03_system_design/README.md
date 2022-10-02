@@ -23,3 +23,7 @@
 
 ### Assumptions
 * Images uploaded by users can be compressed / would not be too big in size.
+
+### References
+1. Azure Service Bus: https://learn.microsoft.com/en-us/azure/service-bus-messaging/service-bus-messaging-overview
+2. Image classification on Azure: https://learn.microsoft.com/en-us/azure/architecture/example-scenario/ai/intelligent-apps-image-processing

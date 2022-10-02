@@ -73,8 +73,8 @@ sales-postgres-db-container | (3 rows)
 <br>
 
 ### References
-https://stackoverflow.com/questions/57015003/log-all-queries-in-the-official-postgres-docker-image
-
+1. Logging queries and output in docker run: https://stackoverflow.com/questions/57015003/log-all-queries-in-the-official-postgres-docker-image
+2. Initialise PostgreSQL with docker compose 
 https://levelup.gitconnected.com/creating-and-filling-a-postgres-db-with-docker-compose-e1607f6f882f
-
-https://www.mockaroo.com/
+3. Using docker compose based on Dockerfile: https://www.educative.io/blog/docker-compose-tutorial
+4. Generate mock data: https://www.mockaroo.com/

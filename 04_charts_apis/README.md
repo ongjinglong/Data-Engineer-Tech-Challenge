@@ -7,7 +7,7 @@ To set up instances of PostgreSQL and Grafana via Docker to use as data sink and
 ![](./ui/dashboard-sample.png)
 
 ### Run
-To intialise postgresql and grafana, cd to this folder (folder `docker-compose.yml`) and execute the following command (in WSL for Windows):
+To intialise postgresql and grafana, cd to this folder (folder containing `docker-compose.yml`) and execute the following command (in WSL for Windows):
 ```
 docker-compose up
 ```

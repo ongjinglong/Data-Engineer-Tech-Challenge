@@ -5,7 +5,7 @@ To set up steps of the data pipeline as tasks of an Airflow DAG, with a schedule
 
 ### DAG Details
 * DAG Name: daily_data_processing_pipeline
-* DAG Schedule: 0 1 * * *
+* DAG Schedule: `0 1 * * *`
 
 ### Task Group Details
 | Task Group Name | Task Group Description |
@@ -25,7 +25,7 @@ To set up steps of the data pipeline as tasks of an Airflow DAG, with a schedule
 ![](dag-diagram.png)
 
 ### Run
-To intialise airflow for the first time, cd to this folder (folder `docker-compose.yml`) and execute the following command (in WSL for Windows):
+To intialise airflow for the first time, cd to this folder (folder containing `docker-compose.yml`) and execute the following command (in WSL for Windows):
 ```
 mkdir -p ./dags ./logs ./plugins
 echo -e "AIRFLOW_UID=$(id -u)\nAIRFLOW_GID=0" > .env
@@ -54,6 +54,5 @@ python dag_schedule.py
 The output files can be found [here](dags/output/).
 
 ### References
-https://airflow.apache.org/docs/apache-airflow/2.1.3/start/docker.html
-
-https://tegardp.medium.com/the-6-step-etl-process-using-airflow-with-example-and-exercise-db46715a61f0
+1. Using airflow with docker: https://airflow.apache.org/docs/apache-airflow/2.1.3/start/docker.html
+2. Setting up ETL with airflow: https://tegardp.medium.com/the-6-step-etl-process-using-airflow-with-example-and-exercise-db46715a61f0

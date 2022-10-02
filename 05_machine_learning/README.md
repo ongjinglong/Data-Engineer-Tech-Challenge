@@ -44,3 +44,7 @@ no other rows with the same values... proceeding to the mode of all rows for col
 
 Buying price is predicted to be low
 ```
+
+### References
+1. Starting MLFlow on local machine: https://stackoverflow.com/questions/71708147/mlflow-tracking-ui-not-showing-experiments-on-local-machine-laptop
+2. Getting run based on with filter on metrics: https://www.mlflow.org/docs/latest/search-runs.html
